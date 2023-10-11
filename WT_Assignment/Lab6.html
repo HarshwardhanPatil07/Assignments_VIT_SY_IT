@@ -1,0 +1,166 @@
+<html>
+  <head>
+    <title>JavaScript Object Methods</title>
+  </head>
+  <body>
+    <h1 style="text-align: center;">Methods of Objects in JavaScript</h1>
+    <div>
+      <input type="button" onclick="arr()" value="Array" />
+      <input type="button" onclick="str()" value="String" />
+      <input type="button" onclick="dat()" value="Date" />
+      <input type="button" onclick="mat()" value="Math" />
+    </div>
+    <script type="text/javascript">
+      function arr() {
+        document.write("<h1>Array Object Operations</h1>");
+        document.write(
+          '<input type="button" onclick="str()" value="String" />'
+        );
+        document.write(
+          '<br><br><input type="button" onclick="dat()" value="Date" />'
+        );
+        document.write(
+          '<br><br><input type="button" onclick="mat()" value="Math" />'
+        );
+        document.write("<br><br>Array1 = a,b,c");
+        document.write("<br>Array2 = 1,2,3");
+        var arr1 = new Array("a", "b", "c");
+        var arr2 = new Array("1", "2", "3");
+        var concat = arr1.concat(arr2);
+        var size = arr2.length;
+        document.write(
+          "<br><br>1.Concatenation of Array1 and Array2 : " + concat
+        );
+        document.write("<br><br>2.Array1 joined uses ' ': " + arr1.join(" "));
+        document.write(
+          "<br><br>3.Primitive value of Array1 : " + arr1.valueOf()
+        );
+        document.write("<br><br>4.Array1 reversed : " + arr1.reverse());
+        document.write(
+          "<br><br>5.Shift method performed on Array2 : " + arr2.shift()
+        );
+        document.write("<br><br>6.Size of Array2 : " + size);
+        document.write(
+          "<br><br>7.Slice method performed on Array1: " + arr1.slice(2)
+        );
+        arr1[0] = "A";
+        document.write("<br><br>8.'A' is added at index 0: " + arr1);
+        document.write("<br><br>9.Popped element: " + arr1.pop());
+        document.write("<br>Array1 = " + arr1);
+        document.write("<br><br>10.Push method performed on Array2 :");
+        var push = arr2.push(5);
+        document.write("<br>Array2 = " + arr2);
+      }
+      function str() {
+        document.write("<h1>String Object Operations</h1>");
+        document.write('<input type="button" onclick="arr()" value="Array" />');
+        document.write(
+          '<br><br><input type="button" onclick="dat()" value="Date" />'
+        );
+        document.write(
+          '<br><br><input type="button" onclick="mat()" value="Math" />'
+        );
+        document.write("<br><br>String 1 = Hello World");
+        document.write("<br>String 2 = JavaScript Methods");
+        var str1 = new String("Hello World ");
+        var str2 = new String("JavaScript Methods");
+        var conc = str1.concat(str2);
+        var index = str1.indexOf("World");
+        document.write(
+          "<br><br>1.Character at position 7 in string 1 is: " + str1.charAt(7)
+        );
+        document.write(
+          "<br><br>2.Concatenation of String1 and String2 : " + conc
+        );
+        document.write("<br><br>3.Index number of 'World': " + index);
+        document.write(
+          "<br><br>4.String 1 in lowercase: " + str1.toLowerCase()
+        );
+        document.write(
+          "<br><br>5.String 2 in uppercase: " + str2.toUpperCase()
+        );
+        document.write("<br><br>6.Length of String 2 : " + str2.length);
+        document.write(
+          "<br><br>7.Sliced part of String 2 : " + str2.slice(7, 13)
+        );
+        document.write(
+          "<br><br>8.Unicode of character at index number 0: " +
+            str1.charCodeAt(0)
+        );
+        document.write("<br><br>9.String 2 is split: " + str2.split(" "));
+        document.write(
+          "<br><br>10.String of length 2 with starting position 7: " +
+            str2.substr(7, 2)
+        );
+      }
+      function dat() {
+        document.write("<h1>Date Object Operations</h1>");
+        document.write('<input type="button" onclick="arr()" value="Array" />');
+        document.write(
+          '<br><br><input type="button" onclick="str()" value="String" />'
+        );
+        document.write(
+          '<br><br><input type="button" onclick="mat()" value="Math" />'
+        );
+        var dt = new Date();
+        document.write("<br><br>Date : " + dt);
+        document.write("<br><br>1.Today's Date : " + dt.getDate());
+        document.write("<br><br>2.Today's Day : " + dt.getDay());
+        document.write("<br><br>3.Current Year : " + dt.getFullYear());
+        document.write(
+          "<br><br>4.Current Month (0=Jan, 11-Dec) : " + dt.getMonth()
+        );
+        document.write(
+          "<br><br>5.Current Hour (24-Hour Time Format) : " + dt.getHours()
+        );
+        document.write("<br><br>6.Current Minutes : " + dt.getMinutes());
+        document.write("<br><br>7.Current Seconds : " + dt.getSeconds());
+        document.write(
+          "<br><br>8.Current Milliseconds : " + dt.getMilliseconds()
+        );
+        document.write(
+          "<br><br>9.Milliseconds since January 1, 1970 : " + dt.getTime()
+        );
+        document.write(
+          "<br><br>10.GMT (Greenwich Mean Time) Date : " + dt.getUTCDate()
+        );
+      }
+      function mat() {
+        document.write("<h1>Math Object Operations</h1>");
+        document.write('<input type="button" onclick="arr()" value="Array" />');
+        document.write(
+          '<br><br><input type="button" onclick="str()" value="String" />'
+        );
+        document.write(
+          '<br><br><input type="button" onclick="dat()" value="Date" />'
+        );
+        document.write("<br><br>Euler's number :" + Math.E);
+        document.write("<br>Value of Pi is : " + Math.PI);
+        document.write(
+          "<br><br>1.Absolute Value of -2.34 : " + Math.abs(-2.34)
+        );
+        document.write(
+          "<br><br>2.Ceil value of 78.2645 : " + Math.ceil(78.2645)
+        );
+        document.write(
+          "<br><br>3.Floor value of 78.2645 : " + Math.floor(78.2645)
+        );
+        document.write("<br><br>4.The value of E<sup>2</sup> : " + Math.exp(2));
+        document.write(
+          "<br><br>5.Cosine value of angle 180 : " + Math.cos(3.14)
+        );
+        document.write("<br><br>6.Sine value of angle 180 : " + Math.sin(3.14));
+        document.write(
+          "<br><br>7.Maximum value along 13,25,89,2: " + Math.max(13, 25, 89, 2)
+        );
+        document.write(
+          "<br><br>8.Minimum value along 13,25,89,2: " + Math.min(13, 25, 89, 2)
+        );
+        document.write(
+          "<br><br>9.Value of 10<sup>3</sup> : " + Math.pow(10, 3)
+        );
+        document.write("<br><br>10.Square root of 64 : " + Math.sqrt(64));
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <title>JQuery Effects</title>
+    <style>
+      .red {
+        color: red;
+      }
+    </style>
+    <script>
+      $(document).ready(function () {
+        $("#hide").dblclick(function () {
+          $("p").hide();
+        });
+        $("#show").click(function () {
+          $("p").show();
+        });
+        $("#toggle").click(function () {
+          $(".text").toggle();
+        });
+        $("#fadein").click(function () {
+          $("#p1").fadeIn("slow");
+        });
+        $("#fadeout").click(function () {
+          $("#p1").fadeOut("slow");
+        });
+        $("#text").click(function () {
+          alert("Text: " + $("#p2").text());
+        });
+        $("#html").click(function () {
+          alert("HTML: " + $("#p2").html());
+        });
+        $("#val").click(function () {
+          alert("Value: " + $("#value").val());
+        });
+        $("#p9").on("click", function () {
+          $(this).hide();
+        });
+        $("#stext").click(function () {
+          $("#p3").text("This paragraph is changed using text() function.");
+        });
+        $("#shtml").click(function () {
+          $("#p4").html(
+            "<i>This paragraph is changed using html() function.</i>"
+          );
+        });
+        $("#sval").click(function () {
+          $("#p5").val("JQuery");
+        });
+        $("#p6").mouseenter(function () {
+          alert("This is mouseenter function.");
+        });
+        $("#p7").mouseleave(function () {
+          alert("This is mouseleave function.");
+        });
+        $("#p8").hover(function () {
+          alert("This is hover function.");
+        });
+        $("input").focus(function () {
+          $(this).css("background-color", "yellow");
+        });
+        $("input").blur(function () {
+          $(this).css("background-color", "green");
+        });
+        $("#aptext").click(function () {
+          $("#p10").append(" <b>International Institute of Technology</b>.");
+        });
+
+        $("#aptext").click(function () {
+          $("#p11").append(" <i>IEEE club of VIT</i>.");
+        });
+
+        $("#aplist").click(function () {
+          $("ol").append("<li>ENTC</li>");
+        });
+
+        $("#prlist").click(function () {
+          $("ol").prepend("<li>CS</li>");
+        });
+
+        $("#btn1").click(function () {
+          $("img").before("<b>Before</b>");
+        });
+
+        $("#btn2").click(function () {
+          $("img").after("<i>After</i>");
+        });
+
+        $("#empty").click(function () {
+          $("#div1").empty();
+        });
+
+        $("#remove").click(function () {
+          $("#div1").remove();
+        });
+
+        $("#add").click(function () {
+          $("h1, h2").addClass("blue");
+        });
+
+        $("#cut").click(function () {
+          $("h1, h2").removeClass("blue");
+        });
+
+        $("#toggle_class").click(function () {
+          $("h1, h2").toggleClass("blue");
+        });
+
+        $("#set_css").click(function () {
+          $("#p12").css("background-color", "green");
+        });
+
+        $("#return_css").click(function () {
+          alert("Background color = " + $("#p12").css("background-color"));
+        });
+
+        $("#p13").click(function () {
+          $("#p14").slideToggle("slow", function () {
+            alert("This is an example of callback function.");
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1 style="text-align: center;">JQuery Effects</h1>
+    <p>These are JQuery Effects.</p>
+    <p class="text">Hello there!</p>
+    <p id="p1">The text will fade in and out.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+    <button id="fadein">FadeIn</button>
+    <button id="fadeout">FadeOut</button>
+    <h1 style="text-align: center;">JQuery Events</h1>
+    <p id="p2">These are <i>JQuery Effects</i>.</p>
+    <button id="text">Show TEXT</button>
+    <button id="html">Show HTML</button>
+    <p>Name: <input type="text" id="value" value="" /></p>
+    <button id="val">Show Value</button>
+    <p id="p3">This will change into another text.</p>
+    <p id="p4">This will change into another text in italic.</p>
+    <p>Input field: <input type="text" id="p5" value="JavaScript" /></p>
+    <button id="stext">Set Text</button>
+    <button id="shtml">Set HTML</button>
+    <button id="sval">Set Value</button>
+    <p id="p6">Enter in field of this text</p>
+    <p id="p7">Leave the field of this text</p>
+    <p id="p8">Hover effect is applied on this text</p>
+    Name: <input type="text" name="name" /><br /><br />
+    Class: <input type="text" name="class" />
+    <p id="p9">This text is hidden using on function.</p>
+    <h1 style="text-align: center;">JQuery Methods For Adding Elements</h1>
+    <p id="p10">VIT is in Pune</p>
+    <p id="p11">IEEE is an</p>
+
+    <ol>
+      <li>IT</li>
+      <li>AIDS</li>
+    </ol>
+
+    <button id="aptext">Append text</button>
+    <button id="aplist">Append list items</button>
+    <button id="prlist">Prepend list items</button><br /><br />
+    <!-- <img src="VIT.png" alt="VIT" width="50" height="70" /><br /><br /> -->
+
+    <button id="btn1">Insert before</button>
+    <button id="btn2">Insert after</button>
+
+    <div
+      id="div1"
+      style="
+        height: 100px;
+        width: 300px;
+        border: 1px solid black;
+        background-color: rgb(0, 13, 255);
+      "
+    >
+      <p>This is some text in the div.</p>
+      <p>This is a paragraph in the div.</p>
+      <p>This is another paragraph in the div.</p>
+    </div>
+    <br />
+    <button id="empty">Empty</button>
+    <button id="remove">Remove</button>
+
+    <style>
+      .red {
+        color: rgb(0, 208, 255);
+      }
+    </style>
+    <h1>This is 1st heading.</h1>
+    <h2>This is 2nd heading.</h2>
+    <button id="add">Apply class</button>
+    <button id="cut">Remove class</button>
+    <button id="toggle_class">Toggle class</button>
+
+    <p style="background-color: #006eff;" id="p12">This is a paragraph.</p>
+    <button id="set_css">Set CSS</button>
+    <button id="return_css">Return CSS</button>
+
+    <p id="p13">This is slide toggle function.</p>
+    <p id="p14">This is a new text.</p>
+  </body>
+</html>
